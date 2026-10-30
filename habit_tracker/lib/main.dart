@@ -16,9 +16,6 @@ const Map<String, List<String>> _s = {
   'name': ['Name', 'பெயர்', 'नाम', 'పేరు', 'Nombre', 'Nom'],
   'email': ['Email', 'மின்னஞ்சல்', 'ईमेल', 'ఇమెయిల్', 'Correo', 'E-mail'],
   'password': ['Password', 'கடவுச்சொல்', 'पासवर्ड', 'పాస్‌వర్డ్', 'Contraseña', 'Mot de passe'],
-  'gender': ['Gender', 'பாலினம்', 'लिंग', 'లింగం', 'Género', 'Genre'],
-  'boy': ['Boy', 'ஆண்', 'लड़का', 'అబ్బాయి', 'Chico', 'Garçon'],
-  'girl': ['Girl', 'பெண்', 'लड़की', 'అమ్మాయి', 'Chica', 'Fille'],
   'language': ['Language', 'மொழி', 'भाषा', 'భాష', 'Idioma', 'Langue'],
   'hello': ['Hello', 'வணக்கம்', 'नमस्ते', 'హలో', 'Hola', 'Bonjour'],
   'home': ['Home', 'முகப்பு', 'होम', 'హోమ్', 'Inicio', 'Accueil'],
@@ -47,7 +44,20 @@ const Map<String, List<String>> _s = {
   'left': ['days left', 'நாட்கள் உள்ளன', 'दिन बाकी', 'రోజులు మిగిలి', 'días restantes', 'jours restants'],
   'logout': ['Log out', 'வெளியேறு', 'लॉग आउट', 'లాగ్ అవుట్', 'Cerrar sesión', 'Déconnexion'],
   'dark': ['Dark mode', 'இருள் பயன்முறை', 'डार्क मोड', 'డార్క్ మోడ్', 'Modo oscuro', 'Mode sombre'],
-  'theme': ['Theme', 'தீம்', 'थीम', 'థీమ్', 'Tema', 'Thème'],
+  'theme': ['Color theme', 'நிறத் தீம்', 'रंग थीम', 'రంగు థీమ్', 'Tema de color', 'Thème de couleur'],
+  'themeHint': ['Pick a look you like', 'உங்களுக்குப் பிடித்த தோற்றம்', 'अपनी पसंद का लुक चुनें', 'మీకు నచ్చిన రూపం ఎంచుకోండి', 'Elige el aspecto que te guste', 'Choisissez un look'],
+  'thOcean': ['Ocean', 'கடல்', 'महासागर', 'సముద్రం', 'Océano', 'Océan'],
+  'thBlossom': ['Blossom', 'மலர்', 'पुष्प', 'పుష్పం', 'Flor', 'Floraison'],
+  'thSunset': ['Sunset', 'அஸ்தமனம்', 'सूर्यास्त', 'సూర్యాస్తమయం', 'Atardecer', 'Coucher'],
+  'thForest': ['Forest', 'காடு', 'वन', 'అడవి', 'Bosque', 'Forêt'],
+  'thMidnight': ['Midnight', 'நள்ளிரவு', 'मध्यरात्रि', 'అర్ధరాత్రి', 'Medianoche', 'Minuit'],
+  'thEmber': ['Ember', 'தணல்', 'अंगार', 'నిప్పు', 'Ascua', 'Braise'],
+  'thAurora': ['Aurora', 'அரோரா', 'अरोरा', 'అరోరా', 'Aurora', 'Aurore'],
+  'thGrape': ['Grape', 'திராட்சை', 'अंगूर', 'ద్రాక్ష', 'Uva', 'Raisin'],
+  'thSlate': ['Slate', 'சாம்பல்', 'स्लेट', 'స్లేట్', 'Pizarra', 'Ardoise'],
+  'thCrimson': ['Crimson', 'கிரிம்சன்', 'क्रिमसन', 'క్రిమ్సన్', 'Carmesí', 'Cramoisi'],
+  'thCitrus': ['Citrus', 'சிட்ரஸ்', 'साइट्रस', 'సిట్రస్', 'Cítricos', 'Agrumes'],
+  'thArctic': ['Arctic', 'ஆர்க்டிக்', 'आर्कटिक', 'ఆర్క్టిక్', 'Ártico', 'Arctique'],
   'invalid': ['Check your details', 'விவரங்களை சரிபார்க்கவும்', 'विवरण जाँचें', 'వివరాలు తనిఖీ చేయండి', 'Revisa tus datos', 'Vérifiez vos informations'],
   'wrong': ['Wrong email or password', 'தவறான மின்னஞ்சல் அல்லது கடவுச்சொல்', 'गलत ईमेल या पासवर्ड', 'తప్పు ఇమెయిల్ లేదా పాస్‌వర్డ్', 'Correo o contraseña incorrectos', 'E-mail ou mot de passe incorrect'],
   'noHabits': ['No habits yet. Add one in the Habits tab!', 'இன்னும் பழக்கங்கள் இல்லை. பழக்கங்கள் தாவலில் சேர்க்கவும்!', 'अभी कोई आदत नहीं। आदतें टैब में जोड़ें!', 'ఇంకా అలవాట్లు లేవు. అలవాట్లు ట్యాబ్‌లో జోడించండి!', 'Aún no hay hábitos. ¡Añade uno en Hábitos!', 'Aucune habitude. Ajoutez-en une dans Habitudes !'],
@@ -73,6 +83,27 @@ const _icons = <IconData>[
 ];
 
 const _wd = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
+
+class AppTheme {
+  final String id, nameKey;
+  final Color a, b;
+  const AppTheme(this.id, this.nameKey, this.a, this.b);
+}
+
+const _themes = <AppTheme>[
+  AppTheme('ocean', 'thOcean', Color(0xFF1565C0), Color(0xFF00ACC1)),
+  AppTheme('blossom', 'thBlossom', Color(0xFFD81B60), Color(0xFF8E24AA)),
+  AppTheme('sunset', 'thSunset', Color(0xFFFF6D00), Color(0xFFE040FB)),
+  AppTheme('forest', 'thForest', Color(0xFF2E7D32), Color(0xFF00BFA5)),
+  AppTheme('midnight', 'thMidnight', Color(0xFF1A237E), Color(0xFF7C4DFF)),
+  AppTheme('ember', 'thEmber', Color(0xFFBF360C), Color(0xFFFF8F00)),
+  AppTheme('aurora', 'thAurora', Color(0xFF00897B), Color(0xFF651FFF)),
+  AppTheme('grape', 'thGrape', Color(0xFF6A1B9A), Color(0xFFEC407A)),
+  AppTheme('slate', 'thSlate', Color(0xFF455A64), Color(0xFF90A4AE)),
+  AppTheme('crimson', 'thCrimson', Color(0xFFB71C1C), Color(0xFFFF5252)),
+  AppTheme('citrus', 'thCitrus', Color(0xFFF9A825), Color(0xFF43A047)),
+  AppTheme('arctic', 'thArctic', Color(0xFF0277BD), Color(0xFF4FC3F7)),
+];
 
 // ───────────────────────── Models ─────────────────────────
 String dayKey(DateTime d) =>
@@ -118,19 +149,18 @@ class Exam {
 // ───────────────────────── State ─────────────────────────
 class AppState extends ChangeNotifier {
   late SharedPreferences p;
-  Map<String, dynamic>? user; // n=name, e=email, h=hash, g=gender
+  Map<String, dynamic>? user; // n=name, e=email, h=hash
   bool loggedIn = false, dark = false;
-  String lang = 'en', gender = 'm';
+  String lang = 'en', themeId = 'ocean';
   List<Habit> habits = [];
   List<Task> tasks = [];
   List<Exam> exams = [];
   Map<String, int> focus = {};
 
   String t(String k) => _s[k]![_codes.indexOf(lang)];
-  bool get girl => gender == 'f';
-  List<Color> get grad => girl
-      ? const [Color(0xFFEC4899), Color(0xFF9C27B0)]
-      : const [Color(0xFF1976D2), Color(0xFF00ACC1)];
+  AppTheme get palette =>
+      _themes.firstWhere((e) => e.id == themeId, orElse: () => _themes.first);
+  List<Color> get grad => [palette.a, palette.b];
 
   Future<void> load() async {
     p = await SharedPreferences.getInstance();
@@ -139,7 +169,7 @@ class AppState extends ChangeNotifier {
     loggedIn = (p.getBool('in') ?? false) && user != null;
     lang = p.getString('lang') ?? 'en';
     dark = p.getBool('dark') ?? false;
-    gender = user?['g'] ?? 'm';
+    themeId = p.getString('theme') ?? 'ocean';
     List l(String k) => jsonDecode(p.getString(k) ?? '[]') as List;
     habits = l('habits').map((e) => Habit.fromJson(e as Map)).toList();
     tasks = l('tasks').map((e) => Task.fromJson(e as Map)).toList();
@@ -152,6 +182,7 @@ class AppState extends ChangeNotifier {
     p.setBool('in', loggedIn);
     p.setString('lang', lang);
     p.setBool('dark', dark);
+    p.setString('theme', themeId);
     p.setString('habits', jsonEncode(habits.map((e) => e.toJson()).toList()));
     p.setString('tasks', jsonEncode(tasks.map((e) => e.toJson()).toList()));
     p.setString('exams', jsonEncode(exams.map((e) => e.toJson()).toList()));
@@ -161,14 +192,13 @@ class AppState extends ChangeNotifier {
 
   // Auth (local only – swap for Firebase/your API for real accounts)
   void register(String n, String e, String pw) {
-    user = {'n': n, 'e': e, 'h': hashPw(pw), 'g': gender};
+    user = {'n': n, 'e': e, 'h': hashPw(pw)};
     loggedIn = true;
     save();
   }
 
   bool signIn(String e, String pw) {
     if (user != null && user!['e'] == e && user!['h'] == hashPw(pw)) {
-      gender = user!['g'];
       loggedIn = true;
       save();
       return true;
@@ -181,10 +211,14 @@ class AppState extends ChangeNotifier {
     save();
   }
 
-  void setGender(String g) {
-    gender = g;
-    if (user != null) user!['g'] = g;
-    loggedIn ? save() : notifyListeners();
+  void setTheme(String id) {
+    themeId = id;
+    if (loggedIn) {
+      save();
+    } else {
+      p.setString('theme', themeId);
+      notifyListeners();
+    }
   }
 
   void setLang(String l) {
@@ -307,6 +341,90 @@ class App extends StatelessWidget {
       );
 }
 
+// ───────────────────────── Theme picker ─────────────────────────
+class ThemePicker extends StatelessWidget {
+  final AppState s;
+  final bool labeled;
+  const ThemePicker(this.s, {this.labeled = false, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+    return Wrap(
+      spacing: 10,
+      runSpacing: 10,
+      children: [
+        for (final t in _themes)
+          Tooltip(
+            message: s.t(t.nameKey),
+            child: Material(
+              color: Colors.transparent,
+              child: InkWell(
+                onTap: () => s.setTheme(t.id),
+                borderRadius: BorderRadius.circular(16),
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 180),
+                  width: labeled ? 104 : 44,
+                  padding: labeled
+                      ? const EdgeInsets.fromLTRB(8, 8, 8, 8)
+                      : EdgeInsets.zero,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: labeled
+                        ? (s.themeId == t.id
+                            ? cs.primaryContainer.withValues(alpha: 0.55)
+                            : cs.surface)
+                        : null,
+                    border: Border.all(
+                      color: s.themeId == t.id ? t.a : cs.outlineVariant,
+                      width: s.themeId == t.id ? 2.5 : 1,
+                    ),
+                  ),
+                  child: labeled
+                      ? Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            _swatch(t, 28),
+                            const SizedBox(height: 6),
+                            Text(
+                              s.t(t.nameKey),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: s.themeId == t.id
+                                    ? FontWeight.w700
+                                    : FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        )
+                      : _swatch(t, 38),
+                ),
+              ),
+            ),
+          ),
+      ],
+    );
+  }
+
+  Widget _swatch(AppTheme t, double size) => Container(
+        width: size,
+        height: size,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          gradient: LinearGradient(
+            colors: [t.a, t.b],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        child: s.themeId == t.id
+            ? const Icon(Icons.check, size: 16, color: Colors.white)
+            : null,
+      );
+}
+
 // ───────────────────────── Login / Register ─────────────────────────
 class Login extends StatefulWidget {
   final AppState s;
@@ -403,25 +521,23 @@ class _LoginState extends State<Login> {
                                         : Icons.visibility_off),
                                     onPressed: () =>
                                         setState(() => hide = !hide)))),
-                        if (reg) ...[
-                          const SizedBox(height: 16),
-                          Text(s.t('gender')),
-                          const SizedBox(height: 6),
-                          SegmentedButton<String>(
-                            segments: [
-                              ButtonSegment(
-                                  value: 'm',
-                                  icon: const Icon(Icons.boy),
-                                  label: Text(s.t('boy'))),
-                              ButtonSegment(
-                                  value: 'f',
-                                  icon: const Icon(Icons.girl),
-                                  label: Text(s.t('girl'))),
-                            ],
-                            selected: {s.gender},
-                            onSelectionChanged: (v) => s.setGender(v.first),
-                          ),
-                        ],
+                        const SizedBox(height: 16),
+                        Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(s.t('theme'),
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.w600))),
+                        const SizedBox(height: 4),
+                        Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(s.t('themeHint'),
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onSurfaceVariant))),
+                        const SizedBox(height: 10),
+                        ThemePicker(s),
                         if (err != null)
                           Padding(
                             padding: const EdgeInsets.only(top: 10),
@@ -1035,15 +1151,13 @@ class SettingsPage extends StatelessWidget {
       ]),
       const SizedBox(height: 16),
       Text(s.t('theme'), style: const TextStyle(fontWeight: FontWeight.bold)),
-      const SizedBox(height: 8),
-      SegmentedButton<String>(
-        segments: [
-          ButtonSegment(value: 'm', icon: const Icon(Icons.boy), label: Text(s.t('boy'))),
-          ButtonSegment(value: 'f', icon: const Icon(Icons.girl), label: Text(s.t('girl'))),
-        ],
-        selected: {s.gender},
-        onSelectionChanged: (v) => s.setGender(v.first),
-      ),
+      const SizedBox(height: 4),
+      Text(s.t('themeHint'),
+          style: TextStyle(
+              fontSize: 12,
+              color: Theme.of(context).colorScheme.onSurfaceVariant)),
+      const SizedBox(height: 12),
+      ThemePicker(s, labeled: true),
       SwitchListTile(
           contentPadding: EdgeInsets.zero,
           title: Text(s.t('dark')),
